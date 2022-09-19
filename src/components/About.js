@@ -9,6 +9,7 @@ const authorsQuery = gql`
       id
       description
       name
+      city
       avatar {
         responsiveImage(imgixParams: { fit: crop, crop: faces, w: 300, h: 300 }) {
           aspectRatio
@@ -42,7 +43,7 @@ const Authors = props => {
                       className="About-img"
                       data={author.avatar.responsiveImage}
                     />
-                    <h2>{author.name}</h2>
+                    <h2>{author.name} {author.city}</h2>
                   </div>
                   <p>{author.description}</p>
                 </div>
